@@ -18,5 +18,7 @@ interface ToDoDao {
     // main Thread 에 호출 되고, 아래 에 있는 코드들을 생성하지 않고, 코루틴 block 을 탈출한다.
     //만약 suspend 키워드를 안쓴다면, 루틴을 게속돌아 MainThread 가 손해받는다?
     @Insert(onConflict = OnConflictStrategy.IGNORE) // PrimaryKey 가 겹치면 무시한다.
+
+
     suspend fun insertData(todoData: ToDoData)
 }
