@@ -13,44 +13,53 @@ import com.example.mvvmpr.data.models.Priority
 
 class ShareViewModel(application: Application) : AndroidViewModel(application) {
 
-    val listener : AdapterView.OnItemSelectedListener = object :
+    //Spinner Listener
+    val listener: AdapterView.OnItemSelectedListener = object :
             AdapterView.OnItemSelectedListener {
+        //클릭 안됌
         override fun onNothingSelected(parent: AdapterView<*>?) {
-            TODO("Not yet implemented")
+
         }
 
+        //클릭됌
         override fun onItemSelected(parent: AdapterView<*>?, view: View?, position: Int, id: Long) {
 
-            when (position){
-                0-> {(parent?.getChildAt(0) as TextView).setTextColor(ContextCompat.getColor(application, R.color.red)) }
-                0-> {(parent?.getChildAt(0) as TextView).setTextColor(ContextCompat.getColor(application, R.color.yellow)) }
-                0-> {(parent?.getChildAt(0) as TextView).setTextColor(ContextCompat.getColor(application, R.color.green)) }
+            when (position) {
+                0 -> {
+                    (parent?.getChildAt(0) as TextView).setTextColor(ContextCompat.getColor(application, R.color.red))
+                }
+                0 -> {
+                    (parent?.getChildAt(0) as TextView).setTextColor(ContextCompat.getColor(application, R.color.yellow))
+                }
+                0 -> {
+                    (parent?.getChildAt(0) as TextView).setTextColor(ContextCompat.getColor(application, R.color.green))
+                }
+            }
+
+
         }
 
-
     }
 
-}
-
-fun verifyDtaFromUser(title: String, description: String): Boolean {
-    // TextUtils 이란, Android 에서 제공하는 TextView null 체크 방식이다.
-    return if (TextUtils.isEmpty(title) || TextUtils.isEmpty(description)) {
-        false
-    } else
-        !(title.isEmpty() || description.isEmpty())
-}
-
-fun parsePriority(priority: String): Priority {
-    return when (priority) {
-        "High Priority" -> (Priority.HIGH)
-
-        "Medium Priority" -> (Priority.MEDIUM)
-
-        "Low Priority" -> (Priority.LOW)
-
-        else -> Priority.LOW
+    fun verifyDtaFromUser(title: String, description: String): Boolean {
+        // TextUtils 이란, Android 에서 제공하는 TextView null 체크 방식이다.
+        return if (TextUtils.isEmpty(title) || TextUtils.isEmpty(description)) {
+            false
+        } else
+            !(title.isEmpty() || description.isEmpty())
     }
-}
+
+    fun parsePriority(priority: String): Priority {
+        return when (priority) {
+            "High Priority" -> (Priority.HIGH)
+
+            "Medium Priority" -> (Priority.MEDIUM)
+
+            "Low Priority" -> (Priority.LOW)
+
+            else -> Priority.LOW
+        }
+    }
 
 
 }
