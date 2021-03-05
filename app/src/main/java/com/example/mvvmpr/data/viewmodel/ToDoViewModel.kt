@@ -19,12 +19,7 @@ class ToDoViewModel(application: Application) : AndroidViewModel(application) {
         application
     ).toDoDao()
     private val repository: ToDoRepository = ToDoRepository(toDoDao)
-    private val getAllData: LiveData<List<ToDoData>>
-
-    init {
-        getAllData = repository.getAllData
-    }
-
+    val getAllData: LiveData<List<ToDoData>> = repository.getAllData
 
 
     fun insertData(toDoData: ToDoData) {
@@ -33,7 +28,22 @@ class ToDoViewModel(application: Application) : AndroidViewModel(application) {
         }
     }
 
-    override fun onCleared() {
-            super.onCleared()
+    fun updateData(toDoData: ToDoData) {
+        viewModelScope.launch(Dispatchers.IO) {
+            repository.updateData(toDoData)
+        }
     }
+
+    fun deleteItem(toDoData: ToDoData) {
+        viewModelScope.launch(Dispatchers.IO) {
+            repository.deleteItem(toDoData)
+        }
+    }
+
+    fun deleteAll() {
+        viewModelScope.launch(Dispatchers.IO) {
+            repository.deleteAll()
+        }
+    }
+
 }
