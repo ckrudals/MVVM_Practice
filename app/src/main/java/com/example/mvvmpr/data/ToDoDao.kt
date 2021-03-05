@@ -1,10 +1,7 @@
 package com.example.mvvmpr.data
 
 import androidx.lifecycle.LiveData
-import androidx.room.Dao
-import androidx.room.Insert
-import androidx.room.OnConflictStrategy
-import androidx.room.Query
+import androidx.room.*
 import com.example.mvvmpr.data.models.ToDoData
 
 @Dao
@@ -21,4 +18,13 @@ interface ToDoDao {
 
 
     suspend fun insertData(todoData: ToDoData)
+
+    @Update
+    suspend fun updateData(todoData: ToDoData)
+
+    @Delete
+    suspend fun deleteItem(todoData: ToDoData)
+
+    @Query("DELETE FROM todo_table")
+    suspend fun deleteAll()
 }
