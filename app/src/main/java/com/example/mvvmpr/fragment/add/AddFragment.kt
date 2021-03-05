@@ -2,7 +2,6 @@ package com.example.mvvmpr.fragment.add
 
 import android.content.ContentValues.TAG
 import android.os.Bundle
-import android.text.TextUtils
 import android.util.Log
 import android.view.*
 import android.widget.Toast
@@ -10,18 +9,17 @@ import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
 import com.example.mvvmpr.R
-import com.example.mvvmpr.data.models.Priority
 import com.example.mvvmpr.data.models.ToDoData
 import com.example.mvvmpr.data.viewmodel.ToDoViewModel
 import com.example.mvvmpr.databinding.FragmentAddBinding
-import com.example.mvvmpr.fragment.ShareViewModel
+import com.example.mvvmpr.fragment.SharedViewModel
 import kotlinx.coroutines.InternalCoroutinesApi
 
 
 class AddFragment : Fragment() {
     //    binding 서언
     private var _binding: FragmentAddBinding? = null
-    private val mSharedViewModel: ShareViewModel by viewModels()
+    private val mSharedViewModel: SharedViewModel by viewModels()
     private val binding get() = _binding!!
 
     //viewModel 선언
