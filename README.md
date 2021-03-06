@@ -12,7 +12,7 @@
 <br>
 
 > MVC와 MVVM의 차이점..
-<img src="190316-mvc-mvvm.png">
+<img src="./190316-mvc-mvvm.png">
 <br>
 
 # MVVM 패턴을 왜 공부해야 할까? 🙄
