@@ -4,6 +4,7 @@
 #### 이 MarkDown 는 [To-Do App & Clean Architecture -Android Development - Kotlin](https://www.udemy.com/course/to-do-app-clean-architecture-android-development-kotlin/#instructor-1) 강의를 참고하여 만들었습니다.
 
 
+<br>
 
   # MVVM 패턴이란 무엇인가? 😀
   <h2>**MVVM** 이란  **View** **ViewModel** **Model** 이 결합된 형태로, 각각의 역할을 분리하여, 가독성과 재사용성을 높인 디자인 패턴이다 </h2>
